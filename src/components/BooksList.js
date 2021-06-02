@@ -1,3 +1,5 @@
+import Book from './Book';
+
 const BooksList = () => (
   <table>
     <thead>
@@ -9,11 +11,7 @@ const BooksList = () => (
 
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>The Alchemist</td>
-        <td>Philosophy</td>
-      </tr>
+      <Book bookId={1} title="The Alchemist" category="Philosophy" />
     </tbody>
   </table>
 );
