@@ -1,4 +1,4 @@
-const categories = [
+export const CATEGORIES = [
   { name: 'Action', id: 1 },
   { name: 'Biography', id: 2 },
   { name: 'History', id: 3 },
@@ -21,7 +21,7 @@ const BooksForm = () => (
       <label htmlFor="category">
         Category
         <select name="category" id="category">
-          {categories.map(
+          {CATEGORIES.map(
             (category) => <option key={category.id} value={category.id}>{category.name}</option>,
           )}
         </select>
