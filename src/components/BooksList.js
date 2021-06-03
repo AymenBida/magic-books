@@ -8,7 +8,6 @@ const BooksList = () => (
         <th>Title</th>
         <th>Category</th>
       </tr>
-
     </thead>
     <tbody>
       <Book bookId={1} title="The Alchemist" category="Philosophy" />
