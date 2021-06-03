@@ -1,4 +1,3 @@
-import './App.css';
 import BooksList from '../components/BooksList';
 import BooksForm from '../components/BooksForm';
 
