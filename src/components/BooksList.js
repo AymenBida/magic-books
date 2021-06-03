@@ -1,9 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import { CATEGORIES } from './BooksForm';
+import { removeBook } from '../redux/actions';
 
 const BooksList = () => {
-  const books = useSelector(((state) => state.books));
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+  };
 
   return (
     <table>
@@ -12,6 +18,7 @@ const BooksList = () => {
           <th>Book ID</th>
           <th>Title</th>
           <th>Category</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +29,7 @@ const BooksList = () => {
               bookId={book.id}
               title={book.title}
               category={CATEGORIES.find((cat) => cat.id === book.category).name}
+              handleRemoveBook={handleRemoveBook}
             />
           ),
         )}

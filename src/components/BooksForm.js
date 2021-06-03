@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import createBook from '../redux/actions/index';
+import { createBook } from '../redux/actions/index';
 
 export const CATEGORIES = [
   { name: 'Action', id: '1' },
@@ -22,6 +22,7 @@ const BooksForm = () => {
 
   const handleSubmit = () => {
     dispatch(createBook(book));
+    setBook({ title: '' });
     window.idCounter += 1;
   };
 
