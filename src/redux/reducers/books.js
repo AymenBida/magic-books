@@ -4,22 +4,22 @@ const initialState = [
   {
     title: 'The Alchemist',
     id: 1,
-    category: 2,
+    category: '2',
   },
   {
     title: 'Superman',
     id: 2,
-    category: 1,
+    category: '1',
   },
   {
     title: 'Barney',
     id: 3,
-    category: 5,
+    category: '5',
   },
   {
     title: 'Alien',
     id: 4,
-    category: 7,
+    category: '7',
   },
 ];
 

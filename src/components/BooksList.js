@@ -1,11 +1,10 @@
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import getBooks from '../redux/selectors';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import { CATEGORIES } from './BooksForm';
 
-const BooksList = ({ books }) => {
-  const [...theBooks] = books;
+const BooksList = () => {
+  const books = useSelector(((state) => state.books));
+
   return (
     <table>
       <thead>
@@ -16,7 +15,7 @@ const BooksList = ({ books }) => {
         </tr>
       </thead>
       <tbody>
-        {theBooks.map(
+        {books.map(
           (book) => (
             <Book
               key={book.id}
@@ -32,13 +31,4 @@ const BooksList = ({ books }) => {
   );
 };
 
-BooksList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-const mapStateToProps = (state) => {
-  const books = getBooks(state);
-  return books;
-};
-
-export default connect(mapStateToProps)(BooksList);
+export default BooksList;

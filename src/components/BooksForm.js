@@ -1,25 +1,28 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import createBook from '../redux/actions/index';
 
 export const CATEGORIES = [
-  { name: 'Action', id: 1 },
-  { name: 'Biography', id: 2 },
-  { name: 'History', id: 3 },
-  { name: 'Horror', id: 4 },
-  { name: 'Kids', id: 5 },
-  { name: 'Learning', id: 6 },
-  { name: 'Sci-Fi', id: 7 },
+  { name: 'Action', id: '1' },
+  { name: 'Biography', id: '2' },
+  { name: 'History', id: '3' },
+  { name: 'Horror', id: '4' },
+  { name: 'Kids', id: '5' },
+  { name: 'Learning', id: '6' },
+  { name: 'Sci-Fi', id: '7' },
 ];
 
 const BooksForm = () => {
-  const [bookTitle, setBookTitle] = useState('');
-  const [bookCategory, setBookCategory] = useState('1');
+  const dispatch = useDispatch();
+  const [book, setBook] = useState({ title: '', category: '1' });
 
   const handleChange = (event) => {
-    setBookTitle(event.target.value);
+    setBook({ ...book, [event.target.id]: event.target.value });
   };
 
-  const handleCategory = (event) => {
-    setBookCategory(event.target.value);
+  const handleSubmit = () => {
+    dispatch(createBook(book));
+    window.idCounter += 1;
   };
 
   return (
@@ -27,14 +30,13 @@ const BooksForm = () => {
       <div>
         <label htmlFor="title">
           Title
-          <input id="title" type="text" value={bookTitle} onChange={handleChange} />
+          <input id="title" type="text" value={book.title} onChange={handleChange} />
         </label>
-        {console.log(bookCategory)}
       </div>
       <div>
         <label htmlFor="category">
           Category
-          <select name="category" id="category" value={bookCategory} onChange={handleCategory}>
+          <select name="category" id="category" value={book.category} onChange={handleChange}>
             {CATEGORIES.map(
               (category) => <option key={category.id} value={category.id}>{category.name}</option>,
             )}
@@ -42,11 +44,14 @@ const BooksForm = () => {
         </label>
       </div>
       <div>
-        <button type="button">Submit</button>
+        <button type="button" onClick={handleSubmit}>Submit</button>
       </div>
-
     </form>
   );
 };
+
+// const mapDispatchToProps = (dispatch) => ({
+//   createBook: () => { dispatch(createBook()); },
+// });
 
 export default BooksForm;
