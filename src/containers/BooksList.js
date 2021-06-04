@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getBooks from '../redux/selectors';
-import Book from './Book';
+import Book from '../components/Book';
 import { CATEGORIES } from './BooksForm';
 
 const BooksList = ({ books }) => {
