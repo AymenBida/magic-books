@@ -17,30 +17,19 @@ const BooksList = () => {
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredBooks.map(
-          (book) => (
-            <Book
-              key={book.id}
-              bookId={book.id}
-              title={book.title}
-              category={findCategory(book)}
-              handleRemoveBook={handleRemoveBook}
-            />
-          ),
-        )}
-
-      </tbody>
-    </table>
+    <div>
+      {filteredBooks.map(
+        (book) => (
+          <Book
+            key={book.id}
+            bookId={book.id}
+            title={book.title}
+            category={findCategory(book)}
+            handleRemoveBook={handleRemoveBook}
+          />
+        ),
+      )}
+    </div>
   );
 };
 

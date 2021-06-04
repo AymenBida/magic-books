@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import CategoryFilter from './CategoryFilter';
+import './navbar.scss';
 
 const Navbar = () => (
   <nav className="navbar">
