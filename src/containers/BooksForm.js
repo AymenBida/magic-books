@@ -20,14 +20,15 @@ const BooksForm = () => {
     setBook({ ...book, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     dispatch(createBook(book));
     setBook({ title: '', category: book.category });
     window.idCounter += 1;
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="title">
           Title
@@ -45,14 +46,10 @@ const BooksForm = () => {
         </label>
       </div>
       <div>
-        <button type="button" onClick={handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   );
 };
-
-// const mapDispatchToProps = (dispatch) => ({
-//   createBook: () => { dispatch(createBook()); },
-// });
 
 export default BooksForm;
