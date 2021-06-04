@@ -7,6 +7,7 @@
 :root {
   --black-one: #121212;
   --black-two: #757575;
+  --blue: #0290ff;
   --font: montserrat;
 }
 
@@ -32,7 +33,8 @@
   font-family: var(--font);
   font-size: 30px;
   font-weight: bold;
-  color: #0290ff;
+  color: var(--blue);
+  cursor: pointer;
 }
 
 .fakeLink {
@@ -67,16 +69,12 @@
 .iconWrapper {
   margin-left: auto;
   border-radius: 50%;
-  border: var(--black-one) solid 1px;
+  color: var(--blue);
+  border: var(--blue) solid 1px;
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  &:hover {
-    color: var(--black-two);
-    border-color: var(--black-two);
-  }
 }
