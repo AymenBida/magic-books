@@ -33,7 +33,6 @@ const BooksList = () => {
             />
           ),
         )}
-
       </tbody>
     </table>
   );
