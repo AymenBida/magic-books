@@ -22,7 +22,7 @@ const BooksForm = () => {
 
   const handleSubmit = () => {
     dispatch(createBook(book));
-    setBook({ title: '' });
+    setBook({ title: '', category: book.category });
     window.idCounter += 1;
   };
 
