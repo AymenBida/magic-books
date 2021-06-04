@@ -1,10 +1,10 @@
 import BooksList from '../containers/BooksList';
 import BooksForm from '../containers/BooksForm';
-import CategoryFilter from './CategoryFilter';
+import Navbar from './Navbar';
 
 const App = () => (
-  <div>
-    <CategoryFilter />
+  <div className="rootContainer">
+    <Navbar />
     <BooksList />
     <BooksForm />
   </div>

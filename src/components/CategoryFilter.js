@@ -16,9 +16,8 @@ const CategoryFilter = () => {
   };
 
   return (
-    <label htmlFor="filter">
-      Filter by Category
-      <select name="filter" id="filter" value={category} onChange={handleChange}>
+    <label className="navbar__item filter" htmlFor="filter">
+      <select className="filter" name="filter" id="filter" value={category} onChange={handleChange}>
         {allCategories.map(
           (cat) => <option key={cat.id} value={cat.id}>{cat.name}</option>,
         )}

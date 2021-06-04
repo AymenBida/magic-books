@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black-one: #121212;
+  --black-two: #757575;
+  --font: montserrat;
+}
+
+.rootContainer {
+  width: 1400px;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 95px;
+  padding: 0 100px;
+
+  &__item {
+    margin: 0 38px 0 0;
+  }
+}
+
+.brand {
+  height: 37px;
+  font-family: var(--font);
+  font-size: 30px;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.fakeLink {
+  height: 16px;
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  color: var(--black-one);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--black-two);
+  }
+}
+
+.filter {
+  height: 16px;
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  color: var(--black-one);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--black-two);
+  }
+}
+
+.iconWrapper {
+  margin-left: auto;
+  border-radius: 50%;
+  border: var(--black-one) solid 1px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--black-two);
+    border-color: var(--black-two);
+  }
+}
