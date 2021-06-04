@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import Book from './Book';
+import Book from '../components/Book';
 import { CATEGORIES } from './BooksForm';
 import { removeBook } from '../redux/actions';
 

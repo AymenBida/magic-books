@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { CATEGORIES } from './BooksForm';
+import { CATEGORIES } from '../containers/BooksForm';
 import { changeFilter } from '../redux/actions';
 
 const allCategories = [{ name: 'All', id: '0' }, ...CATEGORIES];
