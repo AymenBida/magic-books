@@ -1,8 +1,13 @@
-import { CREATE_BOOK } from './actionTypes';
+import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
 
-const createBook = (book) => ({
+window.idCounter = 5;
+
+export const createBook = (book) => ({
   type: CREATE_BOOK,
-  payload: book,
+  payload: { ...book, id: window.idCounter },
 });
 
-export default createBook;
+export const removeBook = (id) => ({
+  type: REMOVE_BOOK,
+  payload: id,
+});
