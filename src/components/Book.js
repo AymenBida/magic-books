@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import './book.scss';
 
 const Book = ({
   bookId, title, category, handleRemoveBook,
 }) => (
-  <div>
+  <div className="book">
     <div>{bookId}</div>
     <div>{title}</div>
     <div>{category}</div>

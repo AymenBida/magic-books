@@ -6,7 +6,7 @@ import './app.scss';
 const App = () => (
   <div className="rootContainer">
     <Navbar />
-    <div className="booksContainer">
+    <div className="appContainer">
       <BooksList />
       <BooksForm />
     </div>

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Book from '../components/Book';
 import { CATEGORIES } from './BooksForm';
 import { removeBook } from '../redux/actions';
+import './booksList.scss';
 
 const findCategory = (book) => CATEGORIES.find((cat) => cat.id === book.category).name;
 
@@ -17,7 +18,7 @@ const BooksList = () => {
   };
 
   return (
-    <div>
+    <div className="booksContainer">
       {filteredBooks.map(
         (book) => (
           <Book
