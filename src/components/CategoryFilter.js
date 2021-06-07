@@ -1,30 +1,20 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { CATEGORIES } from '../containers/BooksForm';
-import { changeFilter } from '../redux/actions';
+import PropTypes, { object } from 'prop-types';
 
-const allCategories = [{ name: 'All', id: '0' }, ...CATEGORIES];
+const CategoryFilter = ({ filterChange, filter, allCategories }) => (
+  <label htmlFor="filter">
+    Filter by Category
+    <select name="filter" id="filter" value={filter} onChange={filterChange}>
+      {allCategories.map(
+        (cat) => <option key={cat.id} value={cat.name}>{cat.name}</option>,
+      )}
+    </select>
+  </label>
+);
 
-const CategoryFilter = () => {
-  const [category, setCategory] = useState('0');
-  const dispatch = useDispatch();
-
-  const handleChange = (event) => {
-    const categoryName = allCategories.find((cat) => cat.id === event.target.value).name;
-    setCategory(event.target.value);
-    dispatch(changeFilter(categoryName));
-  };
-
-  return (
-    <label htmlFor="filter">
-      Filter by Category
-      <select name="filter" id="filter" value={category} onChange={handleChange}>
-        {allCategories.map(
-          (cat) => <option key={cat.id} value={cat.id}>{cat.name}</option>,
-        )}
-      </select>
-    </label>
-  );
+CategoryFilter.propTypes = {
+  filterChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  allCategories: PropTypes.arrayOf(typeof object).isRequired,
 };
 
 export default CategoryFilter;
