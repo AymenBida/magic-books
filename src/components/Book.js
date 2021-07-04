@@ -5,10 +5,22 @@ const Book = ({
   bookId, title, category, handleRemoveBook,
 }) => (
   <div className="book">
-    <div>{bookId}</div>
-    <div>{title}</div>
-    <div>{category}</div>
-    <div><button type="button" onClick={() => handleRemoveBook(bookId)}>Delete Book</button></div>
+    <div className="book__leftWrapper">
+      <div className="book__category">{category}</div>
+      <div className="book__title">{title}</div>
+      <div className="book__author">Author</div>
+      <div>
+        <ul>
+          <li className="book__action">Comments</li>
+          <li className="book__action"><button className="normalize" type="button" onClick={() => handleRemoveBook(bookId)}>Remove</button></li>
+          <li className="book__action">Edit</li>
+        </ul>
+      </div>
+    </div>
+    <div className="book__rightWrapper">
+      <div className="oval" />
+    </div>
+
   </div>
 );
 

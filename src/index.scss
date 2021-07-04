@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 1em 0 0;
+}
+
 :root {
   --black-one: #121212;
   --black-two: #757575;
   --blue: #0290ff;
+  --blue-2: #4386bf;
   --font: montserrat;
 }
 
