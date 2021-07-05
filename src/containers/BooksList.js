@@ -12,7 +12,6 @@ const BooksList = () => {
   const dispatch = useDispatch();
 
   const filteredBooks = (filter === 'All') ? books : books.filter((book) => findCategory(book) === filter);
-
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
   };
