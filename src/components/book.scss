@@ -43,7 +43,7 @@
     padding-left: 0;
   }
 
-  &__action>.normalize {
+  &__action > .normalize {
     background: none;
     border: none;
     cursor: pointer;
@@ -90,26 +90,22 @@
   transform: translate(5px, 5px);
   stroke-dasharray: 214;
   stroke-dashoffset: 214;
-  stroke-linecap: linear;
-
 }
 
 .box .percent svg circle:nth-child(1) {
   stroke-dashoffset: 0;
   stroke: #f3f3f3;
-
 }
 
 .box .percent svg circle:nth-child(2) {
   stroke-dashoffset: calc(214 - (214 * 64) / 100);
   stroke: #03a9f4;
-
 }
 
 .completion {
   padding: 0 5em 0.6em 0;
   border-right: solid lightgray 2px;
-  
+
   &__number {
     font-family: var(--font);
     font-size: 2em;
