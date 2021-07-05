@@ -18,7 +18,23 @@ const Book = ({
       </div>
     </div>
     <div className="book__rightWrapper">
-      <div className="oval" />
+      <div className="box">
+        <div className="percent">
+          <svg>
+            <circle cx="34" cy="34" r="34" />
+            <circle cx="34" cy="34" r="34" />
+          </svg>
+        </div>
+      </div>
+      <div className="completion">
+        <div className="completion__number">64%</div>
+        <div className="completion__text">Completed</div>
+      </div>
+      <div className="chapter">
+        <div className="chapter__text">CURRENT CHAPTER</div>
+        <div className="chapter__number">Chapter 17</div>
+        <button type="button" className="chapter__button">UPDATE PROGRESS</button>
+      </div>
     </div>
 
   </div>
