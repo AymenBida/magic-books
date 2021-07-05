@@ -1,6 +1,6 @@
 ## Magic Books
 
-> This is going to be a website for a fictional Company named magic-books, the project is going to be built using React and Redux
+> This is a website for a fictional Company named magic-books, the project is built using React and Redux
 
 ## Built With 
 
@@ -41,7 +41,7 @@ Feel free to check the [issues page](https://github.com/AymenBida/magic-books/is
 
 ## Acknowledgments
 
-If any
+- Design provided by Microverse
 
 ## Show your support
 
