@@ -1,0 +1,146 @@
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+  padding: 30px;
+  background-color: white;
+  border: lightgray 1px solid;
+  border-radius: 5px;
+  margin-bottom: 1em;
+
+  &__category {
+    font-family: var(--font);
+    font-size: 0.7em;
+    color: var(--black-two);
+  }
+
+  &__title {
+    font-family: var(--font);
+    font-size: 1.1em;
+    color: var(--black-one);
+  }
+
+  &__author {
+    font-size: 1em;
+    color: var(--blue-2);
+  }
+
+  &__action {
+    font-size: 1em;
+    color: var(--blue-2);
+    cursor: pointer;
+    padding: 0 0.7em;
+    border-right: lightgray 2px solid;
+  }
+
+  &__action:last-of-type {
+    border-right: none;
+  }
+
+  &__action:first-of-type {
+    padding-left: 0;
+  }
+
+  &__action > .normalize {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--blue-2);
+    font-family: inherit;
+    padding: 0;
+  }
+
+  &__rightWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 7em 0 0;
+  }
+}
+
+.box {
+  background: #fff;
+  width: 78px;
+  height: 78px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box .percent {
+  width: 78px;
+  height: 78px;
+}
+
+.box .percent svg {
+  width: 78px;
+  height: 78px;
+  transform: rotateZ(-90deg);
+}
+
+.box .percent svg circle {
+  width: 78px;
+  height: 78px;
+  fill: none;
+  stroke-width: 6;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 214;
+  stroke-dashoffset: 214;
+}
+
+.box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #f3f3f3;
+}
+
+.box .percent svg circle:nth-child(2) {
+  stroke-dashoffset: calc(214 - (214 * 64) / 100);
+  stroke: #03a9f4;
+}
+
+.completion {
+  padding: 0 5em 0.6em 0;
+  border-right: solid lightgray 2px;
+
+  &__number {
+    font-family: var(--font);
+    font-size: 2em;
+    margin: 0 0 0 0.6em;
+  }
+
+  &__text {
+    font-family: var(--font);
+    font-size: 1em;
+    color: var(--black-two);
+    margin: 0 0 0 1.2em;
+  }
+}
+
+.chapter {
+  margin: 0 0 0 3.7em;
+  font-family: var(--font-2);
+
+  &__text {
+    color: var(--black-two);
+    font-size: 0.8em;
+    margin: 0 0 0.5em;
+  }
+
+  &__number {
+    margin: 0 0 1.5em;
+  }
+
+  &__button {
+    background-color: var(--blue);
+    padding: 0.5em 1.8em;
+    border: solid var(--blue-2) 1px;
+    border-radius: 4px;
+    font-family: inherit;
+    color: white;
+    cursor: pointer;
+  }
+}

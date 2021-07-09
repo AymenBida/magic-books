@@ -1,20 +1,29 @@
-import PropTypes, { object } from 'prop-types';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { CATEGORIES } from '../containers/BooksForm';
+import { changeFilter } from '../redux/actions';
 
-const CategoryFilter = ({ filterChange, filter, allCategories }) => (
-  <label htmlFor="filter">
-    Filter by Category
-    <select name="filter" id="filter" value={filter} onChange={filterChange}>
-      {allCategories.map(
-        (cat) => <option key={cat.id} value={cat.name}>{cat.name}</option>,
-      )}
-    </select>
-  </label>
-);
+const allCategories = [{ name: 'All', id: '0' }, ...CATEGORIES];
 
-CategoryFilter.propTypes = {
-  filterChange: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  allCategories: PropTypes.arrayOf(typeof object).isRequired,
+const CategoryFilter = () => {
+  const [category, setCategory] = useState('0');
+  const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    const categoryName = allCategories.find((cat) => cat.id === event.target.value).name;
+    setCategory(event.target.value);
+    dispatch(changeFilter(categoryName));
+  };
+
+  return (
+    <label className="navbar__item filter" htmlFor="filter">
+      <select className="filter" name="filter" id="filter" value={category} onChange={handleChange}>
+        {allCategories.map(
+          (cat) => <option key={cat.id} value={cat.id}>{cat.name}</option>,
+        )}
+      </select>
+    </label>
+  );
 };
 
 export default CategoryFilter;

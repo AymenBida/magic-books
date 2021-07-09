@@ -1,0 +1,41 @@
+.addForm {
+  margin: 2.5em 0 0 0;
+  padding: 1em 0 4em;
+  border-top: lightgray solid 2px;
+
+  &__title {
+    font-family: var(--font);
+    font-size: 1.25em;
+    color: var(--black-two);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 2.8em;
+  }
+
+  &__bookTitle {
+    width: 55%;
+    border: lightgray solid 1px;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  &__category {
+    width: 25%;
+    border: lightgray solid 1px;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  &__submit {
+    width: 15%;
+    border: solid var(--blue-2) 1px;
+    background-color: var(--blue);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: var(--font-2);
+  }
+}

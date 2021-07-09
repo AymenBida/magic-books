@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBook } from '../redux/actions/index';
+import './booksForm.scss';
 
 export const CATEGORIES = [
   { name: 'Action', id: '1' },
@@ -28,25 +29,16 @@ const BooksForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">
-          Title
-          <input id="title" type="text" value={book.title} onChange={handleChange} />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="category">
-          Category
-          <select name="category" id="category" value={book.category} onChange={handleChange}>
-            {CATEGORIES.map(
-              (category) => <option key={category.id} value={category.id}>{category.name}</option>,
-            )}
-          </select>
-        </label>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
+    <form className="addForm" onSubmit={handleSubmit}>
+      <h2 className="addForm__title">ADD NEW BOOK</h2>
+      <div className="addForm__wrapper">
+        <input className="addForm__bookTitle" id="title" type="text" value={book.title} onChange={handleChange} placeholder="Book title" />
+        <select className="addForm__category" name="category" id="category" value={book.category} onChange={handleChange}>
+          {CATEGORIES.map(
+            (category) => <option key={category.id} value={category.id}>{category.name}</option>,
+          )}
+        </select>
+        <button className="addForm__submit" type="submit">ADD BOOK</button>
       </div>
     </form>
   );
